@@ -26,6 +26,10 @@ SELECT userid 아이디, usernm 이름, alias 별명
 FROM users
 WHERE userid IN ('brown', 'cony', 'sally');
 
+SELECT userid 아이디, usernm 이름, alias 별명
+FROM users
+WHERE userid = 'brown' OR userid = 'cony' OR userid = 'sally';
+
 -- LIKE 연산자 : 문자열 매칭 연산
 -- $ : 여러 문자(문자가 없을 수도 있다)
 -- _ : 하나의 문자 
