@@ -180,9 +180,17 @@ FROM cycle;
 SELECT *
 FROM product;
 
-SELECT product.pid, pnm, cid, day, COUNT(cid)
-FROM cycle LEFT OUTER JOIN product ON (cycle.pid = product.pid)
-GROUP BY product.pid, pnm, cid, day;
+SELECT product.pid, pnm, NVL(cid, 1) cid, NVL(day , 0) day, NVL(cnt, 0) cnt
+FROM cycle RIGHT OUTER JOIN product ON (cycle.pid = product.pid AND cid IN 1);
+
+--outerjoin 5
+SELECT *
+FROM customer;
+
+SELECT product.pid, pnm, NVL(cycle.cid, 1) cid, NVL(cnm, 'brown') cnm, NVL(day, 0) day, NVL(cnt, 0) cnt
+FROM cycle FULL OUTER JOIN customer ON(cycle.cid = customer.cid)
+           RIGHT OUTER JOIN product ON (cycle.pid = product.pid AND customer.cid IN 1);
+
 
 
 
