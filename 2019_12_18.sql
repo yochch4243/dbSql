@@ -233,7 +233,7 @@ CONNECT BY PRIOR seq =  parent_seq
 ORDER BY seq DESC;
 
 --½Ç½À h8
-SELECT null, seq, LPAD(' ', 4 * (LEVEL -1)) || title title 
+SELECT null, seq, parent_seq, LPAD(' ', 4 * (LEVEL -1)) || title title 
 FROM BOARD_TEST
 START WITH parent_seq IS NULL 
 CONNECT BY PRIOR seq =  parent_seq

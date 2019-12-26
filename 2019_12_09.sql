@@ -1,16 +1,16 @@
 --PRIMARY KEY제약 : UNIQUE + NOT NULL
-
+/*
 UNIQUE : 해당컬럼에 동일한 값이 중복될 수 없다.
         (ex : emp테이블의 empno
               dept 테이블의 deptno)
         해당 컬럼에 null값은 들어갈 수 없다
 
 NOT NULL : 데이터 입력시 해당 컬럼에 값이 반드시 들어와야 한다
-
+*/
 --컬럼 레벨의 PRIMARY KEY 제약 생성
 --오라클의 제약조건 이름을 임의로 생성 (SYS-C000701)
 CREATE TABLE dept_test(
-    deptno NUMBER(2) PRIMARY KEY,
+    deptno NUMBER(2) PRIMARY KEY;
 --오라클 제약조건의 이름의 임의로 명명
 --PRIMARY KEY : pk_테이블명
 CREATE TABLE dept_test(

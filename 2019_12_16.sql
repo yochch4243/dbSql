@@ -157,3 +157,4 @@ WHEN MATCHED THEN
                      
 SELECT *
 FROM emp_test;
+ROLLBACK;

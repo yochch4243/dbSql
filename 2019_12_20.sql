@@ -162,4 +162,5 @@ END;
 /
 EXEC UPDATEdept_test(99, 'ddit_m', 'daejeon');
 
- 
+SELECT *
+FROM dept_test;
